@@ -10,6 +10,7 @@ export default function InputField({ value, setValue }) {
     window.addEventListener("resize", () => {
       setText(textarea.current.scrollHeight);
     });
+    setText(textarea.current.scrollHeight);
   }, [value]);
 
   return (
