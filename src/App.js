@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Header from "./Components/Header";
+import CountedData from "./Components/CountedData";
+import InputField from "./Components/Inputfield";
 
-function App() {
+export default function App() {
+  const [text, setText] = React.useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <CountedData text={text} />
+      <InputField value={text} setValue={setText} />
+    </Container>
   );
 }
 
-export default App;
+const Container = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`;
